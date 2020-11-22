@@ -2,33 +2,38 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="funciones.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2472" topLine="296" />
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funciones.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5398" topLine="164" />
 		</Cursor>
 		<Folding>
-			<Collapse line="35" />
-			<Collapse line="44" />
-			<Collapse line="56" />
-			<Collapse line="68" />
-			<Collapse line="76" />
-			<Collapse line="105" />
-			<Collapse line="110" />
+			<Collapse line="325" />
+			<Collapse line="482" />
 		</Folding>
 	</File>
 	<File name="graficas.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="557" topLine="150" />
+			<Cursor1 position="18571" topLine="81" />
 		</Cursor>
+		<Folding>
+			<Collapse line="32" />
+			<Collapse line="46" />
+			<Collapse line="68" />
+			<Collapse line="81" />
+			<Collapse line="161" />
+			<Collapse line="202" />
+			<Collapse line="243" />
+			<Collapse line="284" />
+		</Folding>
 	</File>
 	<File name="Resolucion.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1079" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="1881" topLine="24" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

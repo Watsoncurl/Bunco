@@ -42,6 +42,30 @@ void titulo(){
 
 }
 
+
+
+    /*system("cls");
+                                cout<<""<<endl;
+
+cout<<"___     ___   ____          ________  ____  ____  ________      ____   ___     ______________  ____     __________ "<<endl;
+cout<<"`MM\     `M'  6MMMMb         `MMMMMMMb.`MM' 6MMMMb\ `MMMMMMMb.   6MMMMb  `MM\     `M'`MM`MMMMMMMb.`MM'     `MMMMMMMMM "<<endl;
+cout<<" MMM\     M  8P    Y8         MM    `Mb MM 6M'    ` MM    `Mb  8P    Y8  MMM\     M  MM MM    `Mb MM       MM      \ "<<endl;
+cout<<" M\MM\     M 6M      Mb        MM     MM MM MM       MM     MM 6M      Mb M\MM\     M  MM MM     MM MM       MM        "<<endl;
+cout<<" M \MM\    M MM      MM        MM     MM MM YM.      MM     MM MM      MM M \MM\    M  MM MM    .M9 MM       MM    ,   "<<endl;
+cout<<" M  \MM\   M MM      MM        MM     MM MM  YMMMMb  MM    .M9 MM      MM M  \MM\   M  MM MMMMMMM(  MM       MMMMMMM   "<<endl;
+cout<<" M   \MM\  M MM      MM        MM     MM MM      `Mb MMMMMMM9' MM      MM M   \MM\  M  MM MM    `Mb MM       MM    `   "<<endl;
+cout<<" M    \MM\ M MM      MM        MM     MM MM       MM MM        MM      MM M    \MM\ M  MM MM     MM MM       MM        "<<endl;
+cout<<" M     \MMM YM      M9        MM     MM MM       MM MM        YM      M9 M     \MMM  MM MM     MM MM       MM        "<<endl;
+cout<<" M      \MM  8b    d8         MM    .M9 MM L    ,M9 MM         8b    d8  M      \MM  MM MM    .M9 MM    /  MM      / "<<endl;
+cout<<"_M_      \M   YMMMM9         _MMMMMMM9'_MM_MYMMMM9 _MM_         YMMMM9  _M_      \M _MM_MMMMMMM9'_MMMMMMM _MMMMMMMMM "<<endl;
+
+
+                                cout<<""<<endl;
+                                cout<<""<<endl;
+                                system("pause");
+                                system("cls");*/
+
+
 void impRonda(int ronda, int puntaje, int tiradas, int tfallidas, int cb) {
 	gotoxy(40,2);cout<<"****************************" << endl;
 	gotoxy(51,4);cout <<"RONDA: " << ronda << endl;
@@ -78,11 +102,12 @@ void impRonda2Jug(int ronda, int puntaje1, int puntaje2, int cb, int cb2, int A,
 }
 
 void impFinal(int totalp, int cbunco) {
-	gotoxy(45,10);cout <<"****************************" << endl;
-	gotoxy(53,12);cout <<"FIN DEL JUEGO" << endl;
-	gotoxy(45,15);cout <<"TOTAL DE PUNTOS: " << totalp << endl;
-	gotoxy(45,16);cout <<"TOTAL BUNCOS: " << cbunco << endl;
-	gotoxy(45,19);cout <<"****************************" << endl;
+	gotoxy(45,8);cout <<"****************************" << endl;
+	gotoxy(52,10);cout <<"FIN DEL JUEGO" << endl;
+	gotoxy(45,12);cout <<"TOTAL DE PUNTOS: " << totalp << endl;
+	gotoxy(45,13);cout <<"TOTAL BUNCOS: " << cbunco << endl;
+	gotoxy(45,15);cout <<"****************************" << endl;
+
 	cin.get();
 	system("cls");
 }
@@ -136,120 +161,120 @@ void puntajeTirada(int puntaje){
 
 void dado1(int dados[]){
     switch(dados[0]){
-            case 1: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "|           |" << endl;
-                    gotoxy(5,12); cout << "|     *     |" << endl;
+            case 1: gotoxy(5,11); cout << "|-----------|" << endl;
+                    gotoxy(5,12); cout << "|           |" << endl;
+                    gotoxy(5,13); cout << "|     *     |" << endl;
+                    gotoxy(5,14); cout << "|           |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
+                    break;
+            case 2: gotoxy(5,11); cout << "|-----------|" << endl;
+                    gotoxy(5,12); cout << "| *         |" << endl;
                     gotoxy(5,13); cout << "|           |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
+                    gotoxy(5,14); cout << "|         * |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
                     break;
-            case 2: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "| *         |" << endl;
-                    gotoxy(5,12); cout << "|           |" << endl;
-                    gotoxy(5,13); cout << "|         * |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
+            case 3: gotoxy(5,11); cout << "|-----------|" << endl;
+                    gotoxy(5,12); cout << "| *         |" << endl;
+                    gotoxy(5,13); cout << "|     *     |" << endl;
+                    gotoxy(5,14); cout << "|         * |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
                     break;
-            case 3: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "| *         |" << endl;
-                    gotoxy(5,12); cout << "|     *     |" << endl;
-                    gotoxy(5,13); cout << "|         * |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
+            case 4: gotoxy(5,11); cout << "|-----------|" << endl;
+                    gotoxy(5,12); cout << "| *       * |" << endl;
+                    gotoxy(5,13); cout << "|           |" << endl;
+                    gotoxy(5,14); cout << "| *       * |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
                     break;
-            case 4: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "| *       * |" << endl;
-                    gotoxy(5,12); cout << "|           |" << endl;
-                    gotoxy(5,13); cout << "| *       * |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
+            case 5: gotoxy(5,11); cout << "|-----------|" << endl;
+                    gotoxy(5,12); cout << "| *       * |" << endl;
+                    gotoxy(5,13); cout << "|     *     |" << endl;
+                    gotoxy(5,14); cout << "| *       * |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
                     break;
-            case 5: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "| *       * |" << endl;
-                    gotoxy(5,12); cout << "|     *     |" << endl;
-                    gotoxy(5,13); cout << "| *       * |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
-                    break;
-            case 6: gotoxy(5,10); cout << "|-----------|" << endl;
-                    gotoxy(5,11); cout << "| *       * |" << endl;
+            case 6: gotoxy(5,11); cout << "|-----------|" << endl;
                     gotoxy(5,12); cout << "| *       * |" << endl;
                     gotoxy(5,13); cout << "| *       * |" << endl;
-                    gotoxy(5,14); cout << "|-----------|" << endl;
+                    gotoxy(5,14); cout << "| *       * |" << endl;
+                    gotoxy(5,15); cout << "|-----------|" << endl;
                     break;
             }
 }
 
 void dado2(int dados[]){
     switch(dados[1]){
-            case 1: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "|           |" << endl;
-                    gotoxy(20,12); cout << "|     *     |" << endl;
+            case 1: gotoxy(20,11); cout << "|-----------|" << endl;
+                    gotoxy(20,12); cout << "|           |" << endl;
+                    gotoxy(20,13); cout << "|     *     |" << endl;
+                    gotoxy(20,14); cout << "|           |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
+                    break;
+            case 2: gotoxy(20,11); cout << "|-----------|" << endl;
+                    gotoxy(20,12); cout << "| *         |" << endl;
                     gotoxy(20,13); cout << "|           |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
+                    gotoxy(20,14); cout << "|         * |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
                     break;
-            case 2: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "| *         |" << endl;
-                    gotoxy(20,12); cout << "|           |" << endl;
-                    gotoxy(20,13); cout << "|         * |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
+            case 3: gotoxy(20,11); cout << "|-----------|" << endl;
+                    gotoxy(20,12); cout << "| *         |" << endl;
+                    gotoxy(20,13); cout << "|     *     |" << endl;
+                    gotoxy(20,14); cout << "|         * |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
                     break;
-            case 3: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "| *         |" << endl;
-                    gotoxy(20,12); cout << "|     *     |" << endl;
-                    gotoxy(20,13); cout << "|         * |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
+            case 4: gotoxy(20,11); cout << "|-----------|" << endl;
+                    gotoxy(20,12); cout << "| *       * |" << endl;
+                    gotoxy(20,13); cout << "|           |" << endl;
+                    gotoxy(20,14); cout << "| *       * |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
                     break;
-            case 4: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "| *       * |" << endl;
-                    gotoxy(20,12); cout << "|           |" << endl;
-                    gotoxy(20,13); cout << "| *       * |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
+            case 5: gotoxy(20,11); cout << "|-----------|" << endl;
+                    gotoxy(20,12); cout << "| *       * |" << endl;
+                    gotoxy(20,13); cout << "|     *     |" << endl;
+                    gotoxy(20,14); cout << "| *       * |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
                     break;
-            case 5: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "| *       * |" << endl;
-                    gotoxy(20,12); cout << "|     *     |" << endl;
-                    gotoxy(20,13); cout << "| *       * |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
-                    break;
-            case 6: gotoxy(20,10); cout << "|-----------|" << endl;
-                    gotoxy(20,11); cout << "| *       * |" << endl;
+            case 6: gotoxy(20,11); cout << "|-----------|" << endl;
                     gotoxy(20,12); cout << "| *       * |" << endl;
                     gotoxy(20,13); cout << "| *       * |" << endl;
-                    gotoxy(20,14); cout << "|-----------|" << endl;
+                    gotoxy(20,14); cout << "| *       * |" << endl;
+                    gotoxy(20,15); cout << "|-----------|" << endl;
                     break;
             }
 }
 
 void dado3(int dados[]){
     switch(dados[2]){
-            case 1: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "|           |" << endl;
-                    gotoxy(35,12); cout << "|     *     |" << endl;
+            case 1: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,12); cout << "|           |" << endl;
+                    gotoxy(35,13); cout << "|     *     |" << endl;
+                    gotoxy(35,14); cout << "|           |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
+                    break;
+            case 2: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,12); cout << "| *         |" << endl;
                     gotoxy(35,13); cout << "|           |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
+                    gotoxy(35,14); cout << "|         * |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
-            case 2: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "| *         |" << endl;
-                    gotoxy(35,12); cout << "|           |" << endl;
-                    gotoxy(35,13); cout << "|         * |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
+            case 3: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,12); cout << "| *         |" << endl;
+                    gotoxy(35,13); cout << "|     *     |" << endl;
+                    gotoxy(35,14); cout << "|         * |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
-            case 3: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "| *         |" << endl;
-                    gotoxy(35,12); cout << "|     *     |" << endl;
-                    gotoxy(35,13); cout << "|         * |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
+            case 4: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,12); cout << "| *       * |" << endl;
+                    gotoxy(35,13); cout << "|           |" << endl;
+                    gotoxy(35,14); cout << "| *       * |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
-            case 4: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "| *       * |" << endl;
-                    gotoxy(35,12); cout << "|           |" << endl;
-                    gotoxy(35,13); cout << "| *       * |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
+            case 5: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,12); cout << "| *       * |" << endl;
+                    gotoxy(35,13); cout << "|     *     |" << endl;
+                    gotoxy(35,14); cout << "| *       * |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
-            case 5: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "| *       * |" << endl;
-                    gotoxy(35,12); cout << "|     *     |" << endl;
-                    gotoxy(35,13); cout << "| *       * |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
-                    break;
-            case 6: gotoxy(35,10); cout << "|-----------|" << endl;
-                    gotoxy(35,11); cout << "| *       * |" << endl;
+            case 6: gotoxy(35,11); cout << "|-----------|" << endl;
+                    gotoxy(35,1); cout << "| *       * |" << endl;
                     gotoxy(35,12); cout << "| *       * |" << endl;
                     gotoxy(35,13); cout << "| *       * |" << endl;
                     gotoxy(35,14); cout << "|-----------|" << endl;

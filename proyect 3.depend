@@ -90,7 +90,7 @@
 1606065203 c:\users\watson\desktop\proyecto lab\resolucion.h
 	"graficas.h"
 
-1606069567 source:c:\users\watson\documents\github\bunco\main.cpp
+1605802264 source:c:\users\diego\downloads\proyecto lab\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstdio>
@@ -102,12 +102,12 @@
 	"Resolucion.h"
 	"graficas.h"
 
-1606072091 c:\users\watson\documents\github\bunco\funciones.h
+1606080085 c:\users\diego\downloads\proyecto lab\funciones.h
 	"graficas.h"
 
-1606069567 c:\users\watson\documents\github\bunco\graficas.h
+1606079099 c:\users\diego\downloads\proyecto lab\graficas.h
 	"funciones.h"
 
-1606069567 c:\users\watson\documents\github\bunco\resolucion.h
+1606079565 c:\users\diego\downloads\proyecto lab\resolucion.h
 	"graficas.h"
 
