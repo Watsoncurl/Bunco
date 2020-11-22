@@ -254,7 +254,7 @@ void unJugador(int v[],int tam,char vn[],int vcb[],int valor){
 
         system("cls");
 
-        for(ronda=1;ronda<=2;ronda++){
+        for(ronda=1;ronda<=6;ronda++){
          tiros=0;
          puntaje=0;
         while(puntajeparcial<21){
@@ -341,7 +341,7 @@ void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores
     gotoxy(2,4); cout<<"***********************************"<<endl;
     gotoxy(2,5); cin>> nombre2;
 
-	while (c<2) {
+	while (c<12) {
             system("cls");
 		if (a==1) {
 		    lanzamiento1 = 0;
@@ -493,7 +493,7 @@ void unJugadorManual(){
 
         system("cls");
 
-        for(ronda=1;ronda<=2;ronda++){
+        for(ronda=1;ronda<=6;ronda++){
          tiros=0;
          puntaje=0;
         while(puntajeparcial<21){

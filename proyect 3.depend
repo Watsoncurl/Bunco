@@ -111,3 +111,24 @@
 1606079565 c:\users\diego\downloads\proyecto lab\resolucion.h
 	"graficas.h"
 
+1606081782 source:c:\users\diego\documents\github\bunco\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<cstring>
+	<windows.h>
+	<conio.h>
+	"funciones.h"
+	"Resolucion.h"
+	"graficas.h"
+
+1606082471 c:\users\diego\documents\github\bunco\funciones.h
+	"graficas.h"
+
+1606081782 c:\users\diego\documents\github\bunco\graficas.h
+	"funciones.h"
+
+1606082109 c:\users\diego\documents\github\bunco\resolucion.h
+	"graficas.h"
+
