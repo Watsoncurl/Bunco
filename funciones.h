@@ -481,7 +481,7 @@ void unJugadorManual(){
             dado2(Dados);
             dado3(Dados);
 
-            //cin.get();
+            cin.get();
 
             ///Puntos 1
             puntaje = CadaDadoCoincidenciaConRonda(Dados,3,ronda);
@@ -566,7 +566,7 @@ void DosJugadoresManual() {
                 dado2(dados);
                 dado3(dados);
 
-                //cin.get();
+                cin.get();
 
                 ///Puntos 1
                 puntaje = CadaDadoCoincidenciaConRonda(dados,3,r1);
