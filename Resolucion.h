@@ -39,10 +39,8 @@
                         ca=1;
                     break;
                         case 3: menuManual();
-                        cargado=true;
                     break;
-                        case 4:
-                        cargado=true; PAlta(v,1,vn,vj1,vj2,vcb,ac,ca);
+                        case 4: PAlta(v,1,vn,vj1,vj2,vcb,ac,ca);
                     break;
                         case 0: cout<<"FIN DEL PROGRAMA"<<endl;
                             return 0;

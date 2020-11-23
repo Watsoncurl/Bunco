@@ -42,38 +42,14 @@ void titulo(){
 
 }
 
-
-
-    /*system("cls");
-                                cout<<""<<endl;
-
-cout<<"___     ___   ____          ________  ____  ____  ________      ____   ___     ______________  ____     __________ "<<endl;
-cout<<"`MM\     `M'  6MMMMb         `MMMMMMMb.`MM' 6MMMMb\ `MMMMMMMb.   6MMMMb  `MM\     `M'`MM`MMMMMMMb.`MM'     `MMMMMMMMM "<<endl;
-cout<<" MMM\     M  8P    Y8         MM    `Mb MM 6M'    ` MM    `Mb  8P    Y8  MMM\     M  MM MM    `Mb MM       MM      \ "<<endl;
-cout<<" M\MM\     M 6M      Mb        MM     MM MM MM       MM     MM 6M      Mb M\MM\     M  MM MM     MM MM       MM        "<<endl;
-cout<<" M \MM\    M MM      MM        MM     MM MM YM.      MM     MM MM      MM M \MM\    M  MM MM    .M9 MM       MM    ,   "<<endl;
-cout<<" M  \MM\   M MM      MM        MM     MM MM  YMMMMb  MM    .M9 MM      MM M  \MM\   M  MM MMMMMMM(  MM       MMMMMMM   "<<endl;
-cout<<" M   \MM\  M MM      MM        MM     MM MM      `Mb MMMMMMM9' MM      MM M   \MM\  M  MM MM    `Mb MM       MM    `   "<<endl;
-cout<<" M    \MM\ M MM      MM        MM     MM MM       MM MM        MM      MM M    \MM\ M  MM MM     MM MM       MM        "<<endl;
-cout<<" M     \MMM YM      M9        MM     MM MM       MM MM        YM      M9 M     \MMM  MM MM     MM MM       MM        "<<endl;
-cout<<" M      \MM  8b    d8         MM    .M9 MM L    ,M9 MM         8b    d8  M      \MM  MM MM    .M9 MM    /  MM      / "<<endl;
-cout<<"_M_      \M   YMMMM9         _MMMMMMM9'_MM_MYMMMM9 _MM_         YMMMM9  _M_      \M _MM_MMMMMMM9'_MMMMMMM _MMMMMMMMM "<<endl;
-
-
-                                cout<<""<<endl;
-                                cout<<""<<endl;
-                                system("pause");
-                                system("cls");*/
-
-
 void impRonda(int ronda, int puntaje, int tiradas, int tfallidas, int cb) {
 	gotoxy(40,2);cout<<"****************************" << endl;
-	gotoxy(51,4);cout <<"RONDA: " << ronda << endl;
+	gotoxy(50,4);cout <<"RONDA: " << ronda << endl;
 	gotoxy(40,6);cout <<"****************************" << endl;
-	gotoxy(44,8);cout <<"PUNTAJE: " << puntaje << endl;
-	gotoxy(44,9);cout <<"BUNCOS: " << cb << endl;
-	gotoxy(44,10);cout <<"TIRADAS FALLIDAS: " << tfallidas << endl;
-	gotoxy(44,11);cout <<"LANZAMIENTOS: " << tiradas << endl;
+	gotoxy(45,8);cout <<"PUNTAJE: " << puntaje << endl;
+	gotoxy(45,9);cout <<"BUNCOS: " << cb << endl;
+	gotoxy(45,10);cout <<"TIRADAS FALLIDAS: " << tfallidas << endl;
+	gotoxy(45,11);cout <<"LANZAMIENTOS: " << tiradas << endl;
 	gotoxy(40,13);cout <<"****************************" << endl;
 	cin.get();
 	system("cls");
@@ -81,32 +57,34 @@ void impRonda(int ronda, int puntaje, int tiradas, int tfallidas, int cb) {
 
 void impRonda2Jug(int ronda, int puntaje1, int puntaje2, int cb, int cb2, int A, char p1[], char p2[]) {
 	gotoxy(40,2);cout <<"****************************" << endl;
-	gotoxy(51,4);cout <<"RONDA: " << ronda <<"\n"<< endl;
+
 	if (A==1)
         {
-        gotoxy(44,6);cout <<"PROXIMO TURNO: " << p1 <<"\n"<< endl;
+        gotoxy(50,4);cout <<"RONDA: " << ronda-1 <<"\n"<< endl;
+        gotoxy(45,6);cout <<"PROXIMO TURNO: " << p1 <<"\n"<< endl;
         }else
         {
-        gotoxy(44,7);cout <<"PROXIMO TURNO: " << p2 <<"\n"<< endl;
+        gotoxy(50,4);cout <<"RONDA: " << ronda <<"\n"<< endl;
+        gotoxy(45,7);cout <<"PROXIMO TURNO: " << p2 <<"\n"<< endl;
         }
 
 	gotoxy(40,9);cout <<"****************************" << endl;
-	gotoxy(40,11);cout <<"PUNTAJE "<< p1 <<": " << puntaje1 <<"\n"<< endl;
-	gotoxy(40,12);cout <<"BUNCOS: " << cb <<"\n"<< endl;
+	gotoxy(45,11);cout <<"PUNTAJE "<< p1 <<": " << puntaje1 <<"\n"<< endl;
+	gotoxy(45,12);cout <<"BUNCOS: " << cb <<"\n"<< endl;
 	gotoxy(40,14);cout <<"----------------------------" << endl;
-	gotoxy(40,16);cout <<"PUNTAJE "<< p2 <<": " << puntaje2<< endl;
-	gotoxy(40,17);cout <<"BUNCOS: " << cb2 << endl;
+	gotoxy(45,16);cout <<"PUNTAJE "<< p2 <<": " << puntaje2<< endl;
+	gotoxy(45,17);cout <<"BUNCOS: " << cb2 << endl;
 	gotoxy(40,19);cout <<"****************************" << endl;
 	cin.get();
 	system("cls");
 }
 
 void impFinal(int totalp, int cbunco) {
-	gotoxy(45,8);cout <<"****************************" << endl;
-	gotoxy(52,10);cout <<"FIN DEL JUEGO" << endl;
-	gotoxy(45,12);cout <<"TOTAL DE PUNTOS: " << totalp << endl;
-	gotoxy(45,13);cout <<"TOTAL BUNCOS: " << cbunco << endl;
-	gotoxy(45,15);cout <<"****************************" << endl;
+	gotoxy(40,8);cout <<"****************************" << endl;
+	gotoxy(48,10);cout <<"FIN DEL JUEGO" << endl;
+	gotoxy(44,12);cout <<"TOTAL DE PUNTOS: " << totalp << endl;
+	gotoxy(44,13);cout <<"TOTAL BUNCOS: " << cbunco << endl;
+	gotoxy(40,15);cout <<"****************************" << endl;
 
 	cin.get();
 	system("cls");
@@ -115,27 +93,27 @@ void impFinal(int totalp, int cbunco) {
 void impFinal2Jug(int puntaje1, int puntaje2, int cb1, int cb2,char jugador1[],char jugador2[]) {
     if ((puntaje1>puntaje2)||(cb1>cb2))
         {
-            gotoxy(45,8);cout <<"****************************\n" << endl;
-            gotoxy(55,10);cout <<"GANADOR: "<< jugador1 << endl;
+            gotoxy(40,8);cout <<"****************************\n" << endl;
+            gotoxy(48,10);cout <<"GANADOR: "<< jugador1 << endl;
             gotoxy(45,12);cout <<"TOTAL DE PUNTOS: " << puntaje1 << endl;
             gotoxy(45,13);cout <<"TOTAL BUNCOS: " << cb1 << endl;
-            gotoxy(45,15);cout <<"****************************" << endl;
+            gotoxy(40,15);cout <<"****************************" << endl;
         }else if ((puntaje2>puntaje1)||(cb2>cb1))
         {
-            gotoxy(45,8);cout <<"****************************\n" << endl;
-            gotoxy(55,10);cout <<"GANADOR: "<< jugador2  << endl;
+            gotoxy(40,8);cout <<"****************************\n" << endl;
+            gotoxy(48,10);cout <<"GANADOR: "<< jugador2  << endl;
             gotoxy(45,12);cout <<"TOTAL DE PUNTOS: " << puntaje2 << endl;
             gotoxy(45,13);cout <<"TOTAL BUNCOS: " << cb2 << endl;
-            gotoxy(45,15);cout <<"****************************" << endl;
+            gotoxy(40,15);cout <<"****************************" << endl;
         }else
         {
-            gotoxy(45,8);cout <<"****************************" << endl;
-            gotoxy(55,10);cout <<"EMPATE" << endl;
+            gotoxy(40,8);cout <<"****************************" << endl;
+            gotoxy(50,10);cout <<"EMPATE" << endl;
             gotoxy(45,12);cout <<"TOTAL DE PUNTOS: " << puntaje1 << endl;
             gotoxy(45,13);cout <<"TOTAL BUNCOS: " << cb1 << endl;
             gotoxy(45,14);cout <<"TOTAL DE PUNTOS: " << puntaje2  << endl;
             gotoxy(45,15);cout <<"TOTAL BUNCOS: " << cb2 << endl;
-            gotoxy(45,17);cout <<"****************************" << endl;
+            gotoxy(40,17);cout <<"****************************" << endl;
         }
 	cin.get();
 	system("cls");
@@ -274,10 +252,10 @@ void dado3(int dados[]){
                     gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
             case 6: gotoxy(35,11); cout << "|-----------|" << endl;
-                    gotoxy(35,1); cout << "| *       * |" << endl;
                     gotoxy(35,12); cout << "| *       * |" << endl;
                     gotoxy(35,13); cout << "| *       * |" << endl;
-                    gotoxy(35,14); cout << "|-----------|" << endl;
+                    gotoxy(35,14); cout << "| *       * |" << endl;
+                    gotoxy(35,15); cout << "|-----------|" << endl;
                     break;
             }
 }

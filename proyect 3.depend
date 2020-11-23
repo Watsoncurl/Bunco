@@ -132,3 +132,24 @@
 1606082109 c:\users\diego\documents\github\bunco\resolucion.h
 	"graficas.h"
 
+1606069567 source:c:\users\watson\documents\github\bunco\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<cstring>
+	<windows.h>
+	<conio.h>
+	"funciones.h"
+	"Resolucion.h"
+	"graficas.h"
+
+1606090354 c:\users\watson\documents\github\bunco\funciones.h
+	"graficas.h"
+
+1606091690 c:\users\watson\documents\github\bunco\graficas.h
+	"funciones.h"
+
+1606090510 c:\users\watson\documents\github\bunco\resolucion.h
+	"graficas.h"
+

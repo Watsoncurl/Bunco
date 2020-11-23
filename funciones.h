@@ -22,87 +22,89 @@ void unJugadorManual();
 
 void DosJugadoresManual();
 
-///-------------------------------------------------------------------------------------------------------
-void gotoxy(int x, int y){
-    HANDLE hCon;
-    hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+///---------------------------------------MECANICAS----------------------------------------------------------------
 
-    COORD dvPos;
-    dvPos.X = x;
-    dvPos.Y = y;
-    SetConsoleCursorPosition(hCon,dvPos);
-
-}
-
+///calcula cuandos numeros iguales hay en un vector
 int DadosIguales(int v[],int tam){
-    int t=0;
-    if(v[0] == v[1] && v[1] == v[2]){
-        t++;
-    }
-    return t;
+   int i, r = 1;
+	for (i=0;i<=tam-2;i++) {
+		if (v[i]==v[i+1]) {
+			r++;
+		}
+	}
+	return r;
 }
-//Funciones para las reglas del juego
+
 ///Calculo Puntos 1
-int CadaDadoCoincidenciaConRonda(int v[], int tam, int i){
-    int x,puntaje=0;
-
-    for(x=0;x<=2;x++){
-        if(v[x]==i){
-            puntaje+=1;
-        }
-    }
-    return puntaje;
-
+int CadaDadoCoincidenciaConRonda(int v[], int tam, int ronda){
+    int i, r = 0;
+	for (i=0;i<=tam-1;i++) {
+		if ((v[i]==ronda)) {
+			r++;
+		}
+	}
+	return r;
 }
+
 ///Calculos Puntos 2
 int DadosEscalera(int v[],int tam, bool escalera){
-    int puntaje=0;
+    int puntaje = 0, a = 1, i;
     ordenarVector(v,3);
-        if((v[2]-v[1])==1){
-            if(v[1]-v[0]==1){
-                puntaje=2;
-                escalera=true;
-            }
+	for (i=0;i<=tam-2;i++) {
+		if (v[i+1]-v[i]==1) {
+			a++;
+		}
+	}
+	if (a==tam) {
+		puntaje = 2;
+		escalera = true;
+	}
+    return puntaje;
+}
+
+///Calculos Puntos 3
+int  NumeroDivisible(int v[],int tam){
+    int puntaje=0, i, sumar;
+    sumar = 0;
+    for (i=0;i<=tam-1;i++) {
+    sumar = sumar+v[i];
+    }
+    if (((sumar%5)==0)) {
+        puntaje = 3;
     }
     return puntaje;
 }
-///Calculos Puntos 3
-int  NumeroDivisible(int v[],int tam){
-    int puntaje=0;
-        if((v[0]+v[1]+v[2]) % 5 == 0){
-                    puntaje=3;
-                }
-       return puntaje;
-    }
+
 ///Calculos Puntos 4
-int DadosIgualesPeroNoRonda(int v[],int tam,int i){
-    int x,puntaje=0,t;
-        t = DadosIguales(v,3);
-        if(t == 1){
-            for(x=0;x<=2;x++){
-               if(v[x]!=i){
-                puntaje=5;
-               }
-        }
-    }
-        return puntaje;
+int DadosIgualesPeroNoRonda(int v[],int tam,int ronda){
+    int a = 0, b, i, puntaje = 0;
+	b = DadosIguales(v,tam);
+	if (b==tam) {
+		for (i=0;i<=tam-1;i++) {
+			if ((v[i]!=ronda)) {
+				puntaje = 5;
+			}
+		}
+	}
+    return puntaje;
 }
+
 ///Calculos Puntos 5
 
-int DadosCoincideConRonda(int v[],int tam,int i){
-    int x,c=0;
-    for(x=0;x<=2;x++){
-        if(v[x]==i){
-            c++;
-        }
-    }
-    if (c==3)
-    return 21;
-
-    return 0;
+int DadosCoincideConRonda(int v[],int tam,int ronda){
+    int c = 0, d, i, puntaje = 0;
+	for (i=0;i<=tam-1;i++) {
+		if (v[i]==ronda) {
+			c++;
+		}
+	}
+	if (c==tam) {
+		puntaje = 21;
+	}
+	return puntaje;
 }
-///-------------------------------------------------------------------------------------------------------
 
+///lanzar dados aleatoriamente
 void lanzar(int dados[], int tam)
 {
 	int  j;
@@ -114,6 +116,7 @@ void lanzar(int dados[], int tam)
 	}
 }
 
+///ordena vector de menor a mayor
 void ordenarVector(int v[], int tam ){
     int i,j, posmin, aux;
     for(i=0;i<tam-1;i++){
@@ -127,8 +130,7 @@ void ordenarVector(int v[], int tam ){
     }
 }
 
-
-
+///cuenta la cantidad de numeros repetidos en un vector
 void NumerosRepetidos(int v[], int tam){
     int i,c,x;
 
@@ -143,6 +145,7 @@ void NumerosRepetidos(int v[], int tam){
     }
 }
 
+///compara los numeros de un vector y devuelve el mayor
 int CompararMaximo(int vm[], int tam){
         int i,vmax = vm[0];
         for(i=0;i<=4;i++){
@@ -154,6 +157,7 @@ int CompararMaximo(int vm[], int tam){
     return vmax;
 }
 
+///carga un vector con numeros aleatorios
 void cargarAleatorio(int v[], int tam, int limite){
   int i;
   srand(time(NULL));
@@ -162,25 +166,10 @@ void cargarAleatorio(int v[], int tam, int limite){
   }
 }
 
-void mostrarVector(int v[], int tam){
-    int i,c=1;
-    for(i=0;i<tam;i++){
-        cout<<"Valor del dado "<<c++<<" Es: "<<v[i]<<"\n"<<endl;
-    }
-}
-
-
-void cargarVector(int v[], int tam){
-    int i;
-    for(i=0;i<tam;i++){
-        cout<<"INGRESE NUMERO: ";
-        cin>>v[i];
-    }
-}
-
-void CalcularMod1(int v[],int tam,char vn[],int buncos[],int valor){
+///calcula e imprime el mayor puntaje de las partidas de modo un jugador
+void CalcularMod1(int v[],int tam,char vn[],int buncos[],int ac){
          int may=0;
-         if(valor==1){
+         if(ac==1){
     if(v[0]>=may){
         may = v[0];
         gotoxy(20,9);cout<<"~~MODO UN JUGADOR~~"<<endl;
@@ -188,18 +177,17 @@ void CalcularMod1(int v[],int tam,char vn[],int buncos[],int valor){
         gotoxy(15,11);cout<<" Nombre: "<<vn<<endl;
         gotoxy(15,12);cout<<" Puntaje: "<<may<<endl;
         gotoxy(15,13);cout<<" Cantidad de buncos: "<<buncos[0]<<endl;
-
      }
-
 }
      else{
-    gotoxy(15,11);cout<<"No se encontro ningun dato"<<endl;
+    gotoxy(20,11);cout<<"**SIN REGISTROS**"<<endl;
      }
 }
 
-void CalcularMod2(int v[],int tam,char nombre1[], char nombre2[], int buncos[],int valores){
+///calcula e imprime el mayor puntaje de las partidas de modo dos jugadores
+void CalcularMod2(int v[],int tam,char nombre1[], char nombre2[], int buncos[],int ca){
     int may2 = 0;
-    if(valores==1){
+    if(ca==1){
     gotoxy(75,9);cout<<"~~MODO DOS JUGADOR~~"<<endl;
     if(v[1] < v[2]){
             may2 = v[2];
@@ -215,38 +203,35 @@ void CalcularMod2(int v[],int tam,char nombre1[], char nombre2[], int buncos[],i
         gotoxy(70,12);cout<<" Puntaje: "<<may2<<endl;
         gotoxy(70,13);cout<<" Cantidad de buncos: "<<buncos[1]<<endl;
         }
-
     }
     else{
-    gotoxy(70,10);cout<<"No se registro datos"<<endl;
+    gotoxy(75,11);cout<<"**SIN REGISTROS**"<<endl;
     }
 }
 
 ///MOSTRAR PUNTUACION ALTA
-
-void PuntuacionAlta(int v[],int tam,char vn[],char vj1[],char vj2[],int vcb[],int ac,int ca){
-    int op;
-                    gotoxy(30,8); cout<<"A continuacion ingrese la puntuacion del modo a su preferencia"<<endl;
-                    gotoxy(30,11);cout<<"1. Puntuacion Alta del Modo jugador"<<endl;
-                    gotoxy(30,12);cout<<"2. Puntuacion Alta del Modo dos jugadores"<<endl;
-                    gotoxy(30,13);cin>>op;
-    switch(op){
-        case 1: CalcularMod1(v,3,vn,vcb,ac);
-        break;
-        case 2: CalcularMod2(v,3,vj1,vj2,vcb,ca);
-        break;
-        default: cout<<"Ingrese una opcion correcta"<<endl;
-    }
+void PAlta(int v[],int tam,char vn[],char vj1[],char vj2[],int vcb[],int ac,int ca){
+        puntajeMax();
+        CalcularMod1(v,3,vn,vcb,ac);
+        CalcularMod2(v,3,vj1,vj2,vcb,ca);
+        cout<<""<<endl;
+        cout<<""<<endl;
+        cout<<""<<endl;
+        system("pause>pa");
+        system("cls");
 
 }
 
+
+///-------------------------------------MODOS DE JUEGO---------------------------------------------------------------------
+
 ///MODO 1 JUGADOR (ALEATORIO)
-void unJugador(int v[],int tam,char vn[],int vcb[],int valor){
+void unJugador(int v[],int tam,char vn[],int vcb[],int ac){
         int ronda,tiros,puntaje,puntajefinal=0,vm[5],tf=0,ctf=0,resultadofinal=0,cb=0,puntajeparcial=0, Dados[3],PMax;
         char nombre[50];
         bool escalera=false;
         system("cls");
-        valor = 1;
+        ac=1;
         gotoxy(2,2); cout<<"*********************************"<<endl;
         gotoxy(2,3); cout<<"|INGRESE EL NOMBRE DEL JUGADOR: |"<<endl;
         gotoxy(2,4); cout<<"*********************************"<<endl;
@@ -260,13 +245,12 @@ void unJugador(int v[],int tam,char vn[],int vcb[],int valor){
         while(puntajeparcial<21){
             tiros++;
             Saludo(nombre,ronda,puntajefinal,tiros,cb,puntajeparcial); //Interfaz de ronda
-            cargarVector(Dados,3);
-            //lanzar(Dados,3);
+            lanzar(Dados,3);
             dado1(Dados);
             dado2(Dados);
             dado3(Dados);
 
-           cin.get();
+           //cin.get();
 
             ///Puntos 1
             puntaje = CadaDadoCoincidenciaConRonda(Dados,3,ronda);
@@ -319,16 +303,13 @@ void unJugador(int v[],int tam,char vn[],int vcb[],int valor){
     if (puntajefinal>v[0]){v[0] = puntajefinal; strcpy(vn,nombre); vcb[0] = cb;}
 }
 
-
-
-
-///MODO 2 JUGADORES
-void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores) {
+///MODO 2 JUGADORES (ALEATORIO)
+void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int ca) {
     int a = 1, c = 0, lanzamiento1 = 0, lanzamiento2 = 0, r1 = 1, r2 = 1, vjug1 = 0, vjug2 = 0, tf = 0, tf2 = 0;
     int dados[3], vm[5], puntaje, cb=0, cb2=0, puntajefinal=0, puntajefinal2=0, ctf=0 ;
     bool escalera=false;
     char nombre1[50], nombre2[50];
-    valores=1;
+    ca=1;
     gotoxy(2,2); cout<<"***********************************"<<endl;
     gotoxy(2,3); cout<<"|INGRESE EL NOMBRE DEL JUGADOR 1: |"<<endl;
     gotoxy(2,4); cout<<"***********************************"<<endl;
@@ -350,13 +331,12 @@ void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores
 				lanzamiento1++;
 
 				Saludo(nombre1,r1,puntajefinal,lanzamiento1,cb,vjug1);
-                cargarVector(dados,3);
-				//lanzar(dados,3);
+				lanzar(dados,3);
 				dado1(dados);
                 dado2(dados);
                 dado3(dados);
 
-                cin.get();
+                //cin.get();
 
                 ///Puntos 1
                 puntaje = CadaDadoCoincidenciaConRonda(dados,3,r1);
@@ -412,13 +392,12 @@ void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores
 				lanzamiento2++;
 
 				Saludo(nombre2,r2,puntajefinal2,lanzamiento2,cb2,vjug2);
-                cargarVector(dados,3);
-				//lanzar(dados,3);
+				lanzar(dados,3);
                 dado1(dados);
                 dado2(dados);
                 dado3(dados);
 
-                cin.get();
+                //cin.get();
 
                      ///Puntos 1
                 puntaje = CadaDadoCoincidenciaConRonda(dados,3,r2);
@@ -460,7 +439,6 @@ void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores
                 cin.get();
                 system("cls");
 
-
 			}
 
 			c = c+1;
@@ -475,10 +453,9 @@ void DosJugadores(int v[], int tam, char vj1[],char vj2[], int vcb[],int valores
 	}
 	impFinal2Jug(puntajefinal,puntajefinal2,cb,cb2,nombre1,nombre2);
 	if (puntajefinal>v[1]){v[1] = puntajefinal; strcpy(vj1,nombre1); vcb[1] = cb;}
-    //v[1] = puntajefinal;
     if (puntajefinal2>v[2]){v[2] = puntajefinal2; strcpy(vj2,nombre2); vcb[2] = cb2;}
-    //v[2] = puntajefinal2;
 }
+
 ///MODO 1 JUGADOR MANUAL (DEL MODO SIMULADO)
 void unJugadorManual(){
         int ronda,tiros,puntaje,puntajefinal=0,vm[5],tf=0,ctf=0,resultadofinal=0,cb=0,puntajeparcial=0, Dados[3];
@@ -504,7 +481,7 @@ void unJugadorManual(){
             dado2(Dados);
             dado3(Dados);
 
-            cin.get();
+            //cin.get();
 
             ///Puntos 1
             puntaje = CadaDadoCoincidenciaConRonda(Dados,3,ronda);
@@ -555,6 +532,7 @@ void unJugadorManual(){
     impFinal(puntajefinal, cb);
 
 }
+
 ///MODO 2 JUGADORES MANUAL (DEL MODO SIMULADO)
 void DosJugadoresManual() {
     int a = 1, c = 0, lanzamiento1 = 0, lanzamiento2 = 0, r1 = 1, r2 = 1, vjug1 = 0, vjug2 = 0, tf = 0, tf2 = 0;
@@ -584,12 +562,11 @@ void DosJugadoresManual() {
 
 				Saludo(nombre,r1,puntajefinal,lanzamiento1,cb,vjug1);
                 cargarVector(dados,3);
-				//lanzar(dados, 3);
 				dado1(dados);
                 dado2(dados);
                 dado3(dados);
 
-                cin.get();
+                //cin.get();
 
                 ///Puntos 1
                 puntaje = CadaDadoCoincidenciaConRonda(dados,3,r1);
@@ -692,7 +669,6 @@ void DosJugadoresManual() {
                 cin.get();
                 system("cls");
 
-
 			}
 
 			c = c+1;
@@ -703,25 +679,39 @@ void DosJugadoresManual() {
 		}
         if(r2<=6){impRonda2Jug( r2, puntajefinal, puntajefinal2, cb, cb2, a, nombre, nombre2);}
 
-
 	}
 	impFinal2Jug(puntajefinal,puntajefinal2,cb,cb2,nombre,nombre2);
 }
 
-void PAlta(int v[],int tam,char vn[],char vj1[],char vj2[],int vcb[],int valor,int valores){
-        puntajeMax();
-        CalcularMod1(v,3,vn,vcb,valor);
-        CalcularMod2(v,3,vj1,vj2,vcb,valores);
-        cout<<""<<endl;
-        cout<<""<<endl;
-        cout<<""<<endl;
-        system("pause>pa");
-        system("cls");
 
+///-----------------------------------------OTROS--------------------------------------------------------------------------
+
+///muestra el contenido de un vector
+void mostrarVector(int v[], int tam){
+    int i,c=1;
+    for(i=0;i<tam;i++){
+        cout<<"Valor del dado "<<c++<<" Es: "<<v[i]<<"\n"<<endl;
+    }
 }
 
+///carga vector de forma manual
+void cargarVector(int v[], int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        cout<<"INGRESE NUMERO: ";
+        cin>>v[i];
+    }
+}
 
+///declara funcion gotoxy
+void gotoxy(int x, int y){
+    HANDLE hCon;
+    hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD dvPos;
+    dvPos.X = x;
+    dvPos.Y = y;
+    SetConsoleCursorPosition(hCon,dvPos);
 
-
+}
 
 #endif // FUNCIONES_H_INCLUDED
